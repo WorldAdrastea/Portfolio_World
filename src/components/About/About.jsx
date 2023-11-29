@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "@mui/material";
 
 export const About = () => {
     return (
@@ -30,6 +31,9 @@ export const About = () => {
                     //src=""
                     //Add photo here
                 />
+            </div>
+            <div>
+                <Button>Download Will's CV here</Button>
             </div>
         </section>
     );

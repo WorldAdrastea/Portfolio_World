@@ -7,7 +7,7 @@ import { Skills } from "../Skills/Skills";
 
 export const MainView = () => {
     return (
-        <main className="flex text-center">
+        <main className="text-gray-400 bg-gray-900 body-font">
             <NavBar/>
             <About/>
             <Projects/>
