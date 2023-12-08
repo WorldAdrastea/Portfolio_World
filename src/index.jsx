@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import { MainView } from './components/MainView/Main_View'
+import { MainView } from './components/MainView/Main_View';
 
 export const Portfolio = () => {
     return (
