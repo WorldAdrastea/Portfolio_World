@@ -6,9 +6,16 @@ const StyledSection = styled.div`
     border-radius: 10px;
     padding: 20px;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .form-container {
+        width: 70%;
+    }
 
     .input {
-        width: 70%;
+        width: 100%;
         border: 1px solid #404040;
         border-radius: 5px;
         padding: 8px;
@@ -76,17 +83,14 @@ export const Contact = () => {
 
     return (
         <StyledSection>
-            <div>
+            <div className="form-container">
                 <div>
-                    <iframe
-                        src="https://www.google.com/maps/embed/v1/place?q=10+Bosuns+Close,+Fareham,+UK&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
-                    />
                     <div>
                         <h2>
                             ADDRESS
                         </h2>
                         <p>
-                            10 Bosuns Close, Fareham, Hampshire PO16 0TQ
+                            Fareham, Hampshire
                         </p>
                     </div>
                     <div>

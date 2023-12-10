@@ -6,13 +6,36 @@ const StyledDiv = styled.div`
     display: flex;
     justify-content: space-between;
     margin-left: 10px;
+    z-index: 2;
+    position: relative;
 
     .right {
-        order: 1; /* Change the order to 1 to place it on the left */
+        order: 1;
+        justify-content: center;
     }
     
     .left {
     display: flex;
+    }
+
+    #name {
+        margin-top: 5px;
+        font-size: 60px;
+        color: black;
+        transition: color 1s;
+    }
+
+    #name:hover {
+        animation: nameColor 1s forwards
+    }
+
+    @keyframes nameColor {
+        from {color: black;}
+        to {color: white;}
+    }
+
+    Button {
+        margin: 5px;
     }
 `
 
@@ -20,7 +43,7 @@ export const NavBar = ({ onNavItemClick }) => {
     return (
         <header>
             <StyledDiv>
-                <a className="left" onClick={() => onNavItemClick("About")}>
+                <a className="left" id="name" onClick={() => onNavItemClick("About")}>
                     William Yau
                 </a>
                 <div className="right">

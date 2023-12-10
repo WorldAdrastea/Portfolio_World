@@ -4,13 +4,54 @@ import { Contact } from "../Contact/Contact";
 import { NavBar } from "../NavBar/Nav_Bar";
 import { Projects } from "../Projects/Projects";
 import { Skills } from "../Skills/Skills";
+import circleGraphic from "url:../../../src/img/Circle BG.png"
 
 import styled from "@emotion/styled";
 
 const StyledMain = styled.div`
-    font-family: Roboto;
+    font-family: Black Ops One;
     background-color: #464A4B;
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+
+    Button {
+        font-family: Black Ops One;
+        background-color: gray;
+    }
+    
+    Button:hover {
+        background-color: black;
+    }
+
+    section {
+        position: relative;
+        color: white;
+        padding: 20px;
+        z-index: 3;
+    }
+
+    #circleGraphic {
+        position: absolute;
+        max-height: 80%;
+        object-fit: cover;
+        filter: grayscale(100%);
+        z-index: 1;
+        animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }    
 `
 
 export const MainView = () => {
@@ -28,6 +69,7 @@ export const MainView = () => {
     return (
         <StyledMain>
             <NavBar onNavItemClick={handleNavItemClick} />
+            <img src={circleGraphic} alt="Spinning Circle" id="circleGraphic"/>
             <section id="About" style={{ display: showAbout ? "block" : "none" }}>
                 <About />
             </section>
