@@ -5,17 +5,17 @@ import { Button } from "@mui/material"
 const StyledDiv = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-left: 10px;
     z-index: 2;
     position: relative;
 
     .right {
+        display: flex;
         order: 1;
-        justify-content: center;
+        align-items: center;
     }
     
     .left {
-    display: flex;
+        display: flex;
     }
 
     #name {
@@ -23,6 +23,7 @@ const StyledDiv = styled.div`
         font-size: 60px;
         color: black;
         transition: color 1s;
+        cursor: pointer;
     }
 
     #name:hover {
@@ -44,11 +45,11 @@ export const NavBar = ({ onNavItemClick }) => {
         <header>
             <StyledDiv>
                 <a className="left" id="name" onClick={() => onNavItemClick("About")}>
-                    William Yau
+                    W.Y.
                 </a>
                 <div className="right">
                     <Button className="button" variant="contained" onClick={() => onNavItemClick("About")}>
-                        Home
+                        Main
                     </Button>
                     <Button className="button" variant="contained" onClick={() => onNavItemClick("Projects")}>
                         Projects

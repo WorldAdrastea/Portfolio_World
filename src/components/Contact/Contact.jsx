@@ -1,172 +1,109 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "@emotion/styled";
-import { Button, TextareaAutosize } from "@mui/material";
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import interventionSound from 'url:../../items/mlg-sound-effect-intervention-mw2.mp3';
 
 const StyledSection = styled.div`
-    border-radius: 10px;
-    padding: 20px;
-    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
 
-    .form-container {
-        width: 70%;
+    a:visited {
+        color: black;
     }
 
-    .input {
-        width: 100%;
-        border: 1px solid #404040;
-        border-radius: 5px;
-        padding: 8px;
-        margin-bottom: 10px;
-        outline: none;
-        transition: border-color 0.3s ease-in-out;
-    
-        &:focus {
-          border-color: #00aaff;
+    a:link {
+        color: black;
+    }
+
+    .icons:hover {
+        cursor: crosshair;
+        animation: iconEnlarge 1s forwards
+    }
+
+    @keyframes iconEnlarge {
+        from {
+            transform: scale(1, 1);
         }
-    }
 
-    .labels {
-        line-height: 1.5715;
-        padding: 10px;
-    }
-
-    .button {
-        color: #fff;
-        background-color: #008394;
-        border: 0;
-        padding: 0.5rem 1.5rem;
-        transition: background-color 0.3s ease-in-out;
-        cursor: pointer;
-        border-radius: 0.375rem;
-        font-size: 1.125rem;
-
-        &:hover {
-            background-color: #33c9dc;
+        to {
+            transform: scale(1.3, 1.3);
         }
-    }
-
-    #contactform {
-        box-sizing: border-box;
-        display: flex;
-        flex-direction: column;
-        width: 100%;
     }
 `
 
+const Dot = styled.div`
+    height: 25px;
+    width: 25px;
+    border: 2px solid white;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    opacity: ${({ visible }) => (visible ? 1 : 0)};
+    transition: opacity 0.1s ease-in-out;
+`;
+
 export const Contact = () => {
+    const [audio] = useState(new Audio(interventionSound));
+    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [dotVisible, setDotVisible] = useState(false);
 
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+    const playClickSound = () => {
+        audio.play();
+    };
 
-    function encode(data) {
-        return Object.keys(data)
-            .map(
-                (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-            )
-            .join("&");
-    }
+    const handleIconHover = () => {
+        setDotVisible(true);
+    };
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: encode({ "form-name": "contact", name, email, message }),
-        })
-        .then(() => alert("Message Sent!"))
-        .catch((error) => alert(error));
-    }
+    const handleIconLeave = () => {
+        setDotVisible(false);
+    };
+
+    const updateMousePosition = (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+
+    useEffect(() => {
+        window.addEventListener("mousemove", updateMousePosition);
+
+        return () => {
+            window.removeEventListener("mousemove", updateMousePosition);
+        };
+    }, []);
 
     return (
         <StyledSection>
-            <div className="form-container">
-                <div>
-                    <div>
-                        <h2>
-                            ADDRESS
-                        </h2>
-                        <p>
-                            Fareham, Hampshire
-                        </p>
-                    </div>
-                    <div>
-                        <h2>
-                            EMAIL
-                        </h2>
-                        <a>
-                            williamcfyau@hotmail.co.uk
-                        </a>
-                        <h2>
-                            PHONE NUMBER
-                        </h2>
-                        <p>
-                            07782502545
-                        </p>
-                    </div>
-                </div>
-                <form
-                    id="contactform"
-                    name="contact"
-                    onSubmit={handleSubmit}
+            <div>
+                <Dot className="dot" style={{ left: mousePosition.x, top: mousePosition.y }} visible={dotVisible}/>
+                <a 
+                    href="https://www.linkedin.com/in/william-yau-wd/" 
+                    target="_blank" 
+                    onClick={playClickSound}
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
                 >
-                    <h2>
-                        Hire Me
-                    </h2>
-                    <div>
-                        <label 
-                            htmlFor="name"
-                            className="labels"
-                        >
-                            Name
-                        </label>
-                        <input
-                            className="input"
-                            type="text"
-                            id="name"
-                            name="name"
-                            onChange={(event) => setName(event.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label 
-                            htmlFor="email"
-                            className="labels"
-                        >
-                            Email
-                        </label>
-                        <input
-                            className="input" 
-                            type="email"
-                            id="email"
-                            name="email"
-                            onChange={(event) => setEmail(event.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label 
-                            htmlFor="message"
-                            className="labels"
-                        >
-                            Message
-                        </label>
-                        <TextareaAutosize
-                            id="message"
-                            name="message"
-                            variant="outlined"
-                            onChange={(event) => setMessage(event.target.value)}
-                        />
-                    </div>
-                    <Button
-                        className="button"
-                        type="submit"
-                    >
-                        Submit
-                    </Button>
-                </form>
+                    <LinkedInIcon className="icons" fontSize="large" />
+                </a>
+                <a 
+                    href="mailto:williamcfyau@hotmail.co.uk" 
+                    onClick={playClickSound}
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                >
+                    <EmailIcon className="icons" fontSize="large" />
+                </a>
+                <a 
+                    href="https://github.com/WorldAdrastea" 
+                    target="_blank" 
+                    onClick={playClickSound}
+                    onMouseEnter={handleIconHover}
+                    onMouseLeave={handleIconLeave}
+                >
+                    <GitHubIcon className="icons" fontSize="large" />
+                </a>
             </div>
         </StyledSection>
     )

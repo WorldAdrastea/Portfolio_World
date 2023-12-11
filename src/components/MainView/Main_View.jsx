@@ -31,7 +31,6 @@ const StyledMain = styled.div`
     section {
         position: relative;
         color: white;
-        padding: 20px;
         z-index: 3;
     }
 
@@ -66,10 +65,11 @@ export const MainView = () => {
         setShowSkills(section === "Skills");
         setShowContact(section === "Contact");
     };
+    
     return (
         <StyledMain>
             <NavBar onNavItemClick={handleNavItemClick} />
-            <img src={circleGraphic} alt="Spinning Circle" id="circleGraphic"/>
+            <img src={circleGraphic} alt="Spinning Circle" id="circleGraphic" />
             <section id="About" style={{ display: showAbout ? "block" : "none" }}>
                 <About />
             </section>
