@@ -5,7 +5,7 @@
   "description": "new portfolio",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html --public-url /your-repository-name/",
+    "build": "parcel build src/index.html --public-url /Portfolio_World/",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
