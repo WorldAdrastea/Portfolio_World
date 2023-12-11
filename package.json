@@ -5,9 +5,7 @@
   "description": "new portfolio",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/index.html --public-url /Portfolio_World/",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "build": "parcel src/index.html"
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +18,6 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.1.0",
     "process": "^0.11.10"
   }
 }
