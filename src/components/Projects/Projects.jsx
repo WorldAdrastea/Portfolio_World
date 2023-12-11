@@ -17,12 +17,12 @@ const StyledDiv = styled.div`
     justify-content: center;
 
     h1 {
-        font-family: Black Ops One;
+        font-family: Silkscreen;
         font-size: 36px;
     }
 
     p {
-        font-family: Black Ops One;
+        font-family: Silkscreen;
     }
 
     img {
@@ -56,6 +56,10 @@ const StyledDiv = styled.div`
         }
     }
 
+    .projects {
+        font-family: Silkscreen;
+    }
+
     #backbutton {
         color: white;
         border-color: white;
@@ -74,9 +78,11 @@ export const Projects = () => {
     };
     return (
         <StyledDiv>
-            <Typography variant="h1">
-                Select a project:
-            </Typography>
+            {selectedProject === null && (
+                <Typography variant="h1">
+                    Select a project:
+                </Typography>
+            )}
             {selectedProject === null && (
                 <div className="cards">
                     <Card onClick={() => handleNavItemClick("Chat")} data-app-name="Chat App" >
@@ -98,13 +104,13 @@ export const Projects = () => {
                 </div>
             )}
             <div onProjectClick={handleNavItemClick}>
-                <section id="Chat" style={{ display: selectedProject === "Chat" ? "block" : "none" }}>
+                <section className="projects" id="Chat" style={{ display: selectedProject === "Chat" ? "block" : "none" }}>
                     <Chat />
                 </section>
-                <section id="Meet" style={{ display: selectedProject === "Meet" ? "block" : "none" }}>
+                <section className="projects" id="Meet" style={{ display: selectedProject === "Meet" ? "block" : "none" }}>
                     <Meet />
                 </section>
-                <section id="myFlix" style={{ display: selectedProject === "myFlix" ? "block" : "none" }}>
+                <section className="projects" id="myFlix" style={{ display: selectedProject === "myFlix" ? "block" : "none" }}>
                     <Flix />
                 </section>
             </div>
