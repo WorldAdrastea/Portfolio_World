@@ -3,7 +3,7 @@
 [![Material UI](https://img.shields.io/badge/Material%20UI-5-green?logo=material-ui)](https://material-ui.com/)
 [![Node.js](https://img.shields.io/badge/Node.js-18.15.0-green?logo=node.js)](https://nodejs.org/)
 [![npm](https://img.shields.io/badge/npm-9.5.0-blue?logo=npm)](https://www.npmjs.com/)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/williamyauportfolio/deploy-status)](https://williamyauportfolio.netlify.app/)
+[![Netlify Status](https://img.shields.io/netlify/williamyauportfolio?logo=netlify)](https://williamyauportfolio.netlify.app/)
 
 # Portfolio Project
 
