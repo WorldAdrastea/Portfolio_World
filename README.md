@@ -1,21 +1,19 @@
+[![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
+[![Parcel](https://img.shields.io/badge/Parcel-2-orange?logo=parcel)](https://parceljs.org/)
+[![Material UI](https://img.shields.io/badge/Material%20UI-5-green?logo=material-ui)](https://material-ui.com/)
+
 # Portfolio Project
 
 This is a personal portfolio project built with React, Parcel, and Material UI. It showcases my skills, projects, and experiences in a visually appealing and interactive way.
 
 ## Table of Contents
 
-- [Live](#Live Version)
+- [Demo](#demo)
 - [Features](#features)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
 - [Usage](#usage)
 - [Customization](#customization)
 - [Deployment](#deployment)
 - [Built With](#built-with)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Live Version
 
@@ -29,7 +27,6 @@ https://williamyauportfolio.netlify.app/
 - Easily customizable content and styles.
 - Built with Parcel for efficient bundling and fast development.
 
-## Getting Started
 
 ### Prerequisites
 
@@ -38,5 +35,9 @@ Before you begin, ensure you have the following tools installed:
 - Node.js and npm
 - Parcel (install globally)
 
-```bash
+``` bash ```
 npm install -g parcel
+
+##
+
+
