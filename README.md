@@ -1,6 +1,9 @@
 [![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://reactjs.org/)
 [![Parcel](https://img.shields.io/badge/Parcel-2-orange?logo=parcel)](https://parceljs.org/)
 [![Material UI](https://img.shields.io/badge/Material%20UI-5-green?logo=material-ui)](https://material-ui.com/)
+[![Node.js](https://img.shields.io/badge/Node.js-14.17.6-green?logo=node.js)](https://nodejs.org/)
+[![npm](https://img.shields.io/badge/npm-7.24.0-blue?logo=npm)](https://www.npmjs.com/)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-netlify-site-id/deploy-status)](https://williamyauportfolio.netlify.app/)
 
 # Portfolio Project
 
