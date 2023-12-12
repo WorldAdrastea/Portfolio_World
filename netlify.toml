@@ -4,6 +4,8 @@
   status = 200
 
 [build]
-    command = "npm run build"
-    publish = "public"
-    node_version = "18"
+  command = "npm run build"
+  publish = "public"
+  node_version = "18"
+  timeout = 18000
+  cache = { paths = ["node_modules/**/*", ".parcel-cache/**/*"] }
