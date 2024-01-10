@@ -60,6 +60,31 @@ const StyledDiv = styled.div`
     .projects {
         font-family: Silkscreen;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .cards {
+            flex-direction: column;
+            overflow: auto;
+
+            img {
+                width: 100px;
+            }
+            
+            .MuiPaper-root {
+                height: 100px;
+            }
+
+            div:hover::after {
+                bottom: -10%;
+            }
+        }
+    }
 `
 
 const StyledModal = styled(Modal)`

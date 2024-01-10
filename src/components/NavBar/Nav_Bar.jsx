@@ -38,6 +38,23 @@ const StyledDiv = styled.div`
     Button {
         margin: 5px;
     }
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        
+        .left {
+            margin-bottom: -15px;
+        }
+
+        .right {
+            order: 2;
+            flex-direction: column;
+            .button {
+                font-size: 8px;
+                padding:
+            }
+        }
+    }
 `
 
 export const NavBar = ({ onNavItemClick }) => {

@@ -32,6 +32,14 @@ const StyledDiv = styled.div`
     li {
         margin-bottom: 8px;
     }
+
+    @media (max-width: 768px) {
+        padding: 0;
+
+        h1 {
+            font-size: 24px;
+        }
+    }
 `
 
 const skillsList = [
@@ -53,7 +61,7 @@ export const Skills = () => {
             <Typography variant="h1">
                 My Skills and Technologies:
             </Typography>
-            <ul>
+            <ul className="skill-list">
                 {skillsList.map((skill, index) => (
                 <li key={index}>
                     {skill.icon}

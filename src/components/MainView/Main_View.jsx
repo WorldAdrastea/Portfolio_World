@@ -52,7 +52,7 @@ const StyledMain = styled.div`
         }
     }
 
-    @media all and (max-width: 768px) and (max-height: 1024px) {
+    @media all and (max-width: 768px) {
         font-size: 16px;
         width: 80%;
         margin: 10px;
@@ -71,16 +71,12 @@ const StyledMain = styled.div`
         }
     }
     
-    @media all and (max-width: 360px) and (max-height: 640px) {
+    @media all and (max-width: 430px) {
         font-size: 12px;
         width: 90%;
         margin: 5px;
+        margin-top: -20px;
 
-        NavBar {
-            flex-direction: column; 
-            align-items: center; 
-        }
-    
         section {
             margin: 5px;
         }
@@ -103,7 +99,7 @@ export const MainView = () => {
         setShowSkills(section === "Skills");
         setShowContact(section === "Contact");
     };
-    
+
     return (
         <StyledMain>
             <NavBar onNavItemClick={handleNavItemClick} />
