@@ -13,11 +13,19 @@ const StyledDiv = styled.div`
     h1 {
         font-family: Silkscreen;
         font-size: 36px;
+
+        @media (max-width: 768px) {
+            font-size: 24px; /* Adjust font size for smaller screens */
+        }
     }
 
     p {
         font-family: Silkscreen;
         font-size: 18px;
+
+        @media (max-width: 768px) {
+            font-size: 12px; /* Adjust font size for smaller screens */
+        }
     }
 
     .intro {

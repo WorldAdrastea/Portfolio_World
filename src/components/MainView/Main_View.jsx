@@ -50,7 +50,45 @@ const StyledMain = styled.div`
         to {
             transform: rotate(360deg);
         }
-    }    
+    }
+
+    @media all and (max-width: 768px) and (max-height: 1024px) {
+        font-size: 16px;
+        width: 80%;
+        margin: 10px;
+
+        NavBar {
+            flex-direction: column; 
+            align-items: center;
+        }
+    
+        section {
+            margin: 10px;
+        }
+
+        #circleGraphic {
+            max-height: 60%;
+        }
+    }
+    
+    @media all and (max-width: 360px) and (max-height: 640px) {
+        font-size: 12px;
+        width: 90%;
+        margin: 5px;
+
+        NavBar {
+            flex-direction: column; 
+            align-items: center; 
+        }
+    
+        section {
+            margin: 5px;
+        }
+
+        #circleGraphic {
+            max-height: 30%;
+        }
+    }
 `
 
 export const MainView = () => {
