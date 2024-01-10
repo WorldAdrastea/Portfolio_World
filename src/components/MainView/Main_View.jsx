@@ -54,7 +54,8 @@ const StyledMain = styled.div`
 
     @media all and (max-width: 768px) {
         font-size: 16px;
-        width: 80%;
+        height: 100%
+        width: 100%;
         margin: 10px;
 
         NavBar {
@@ -73,9 +74,9 @@ const StyledMain = styled.div`
     
     @media all and (max-width: 430px) {
         font-size: 12px;
-        width: 90%;
-        margin: 5px;
-        margin-top: -20px;
+        height: 100%
+        width: 100%;
+        margin: 0px;
 
         section {
             margin: 5px;

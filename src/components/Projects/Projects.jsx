@@ -111,6 +111,10 @@ const StyledModalContent = styled.div`
     p {
         font-family: Silkscreen;
     }
+
+    @media all and (max-width: 430px) {
+        max-width: 300px
+    }
 `
 
 export const Projects = () => {
