@@ -23,6 +23,11 @@ const StyledDiv = styled.div`
         font-size: 36px;
     }
 
+    h2 {
+        font-family: Silkscreen;
+        font-size: 24px;
+    }
+
     ul {
         font-family: Silkscreen;
         list-style-type: none;
@@ -47,22 +52,36 @@ const skillsList = [
     { skill: "CSS", icon: <CssIcon className="icon" /> },
     { skill: "JavaScript", icon: <JavascriptIcon className="icon" /> },
     { skill: "React", icon: <DataObjectIcon className="icon" /> },
-    { skill: "React Native", icon: <MobileFriendlyIcon className="icon" /> },
     { skill: "NodeJS", icon: <StorageIcon className="icon" /> },
     { skill: "Express", icon: <SpeedIcon className="icon" /> },
-    { skill: "AWS (EC2, S3, Lambda and IAM Policies)", icon: <CloudIcon className="icon" /> },
-    { skill: "PostgreSQL", icon: <MemoryIcon className="icon" /> },
     { skill: "MongoDB", icon: <DataArrayIcon className="icon" /> },
 ];
+
+const bonusSkillsList = [
+    { skill: "AWS (EC2, S3, Lambda and IAM Policies)", icon: <CloudIcon className="icon" /> },
+    { skill: "PostgreSQL", icon: <MemoryIcon className="icon" /> },
+    { skill: "React Native", icon: <MobileFriendlyIcon className="icon" /> },
+]
 
 export const Skills = () => {
     return (
         <StyledDiv>
             <Typography variant="h1">
-                My Skills and Technologies:
+                My Main Skills and Technologies:
             </Typography>
             <ul className="skill-list">
                 {skillsList.map((skill, index) => (
+                <li key={index}>
+                    {skill.icon}
+                    {skill.skill}
+                </li>
+                ))}
+            </ul>
+            <Typography variant="h2">
+                Bonus Skills:
+            </Typography>
+            <ul className="skill-list">
+                {bonusSkillsList.map((skill, index) => (
                 <li key={index}>
                     {skill.icon}
                     {skill.skill}
