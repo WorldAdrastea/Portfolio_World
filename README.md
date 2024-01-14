@@ -14,6 +14,7 @@ This is a personal portfolio project built with React, Parcel, and Material UI. 
 - [Live Version](#live)
 - [Built With](#built-with)
 - [Getting Started](#getting-started)
+- [Questions?](#questions)
 
 ## Live Version
 
@@ -29,8 +30,16 @@ This personal portfolio is build with technologies including:
 - Parcel
 
 ## Getting Started
-Make sure you have Node version ``18.15.0`` or above with npm version ``9.5.0`` or above
+Make sure you have Node version ``18.15.0`` or above with npm version ``9.5.0`` or above. After cloning the repo you can install dependencies with:
+``` npm install ```
 
-`Test`
-``Test``
-```Test```
+You can then start it locally with:
+``` parcel src/index.html ```
+
+To create a production build:
+``` npm run build ```
+
+## Questions?
+If there is any questions feel free to ask on Github here.
+
+If you'd like to use this as a template, feel free. Please credit me if you do.
