@@ -28,6 +28,13 @@ const StyledMain = styled.div`
         background-color: black;
     }
 
+    header {
+        position: fixed;
+        top: 0;
+        margin-top: 100px;
+        z-index: 2;
+    }
+
     section {
         position: relative;
         color: white;
