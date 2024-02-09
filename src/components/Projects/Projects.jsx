@@ -8,7 +8,6 @@ import Card  from "@mui/material/Card";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 
-import ChatImg from "../../img/Chat.png";
 import myFlixImg from "../../img/myflix_react.png";
 
 const StyledDiv = styled.div`
@@ -149,11 +148,11 @@ export const Projects = () => {
 
     const projectInfo = {
         Project1: {
-          title: "Chat App",
-          description: "'Chat' the mobile application created with React Native, Firebase and Expo was designed to allow users to receive and send messages with anonymous authentication. Messages within conversations can be displayed whilst users are offline, and users would be also be able to send photos and their own location.",
-          link: "https://github.com/WorldAdrastea/Chat-App",
-          image: ChatImg,
-          demo: "https://drive.google.com/file/d/1bgDCg2WCpcdAkHWs5H8l5FZoV_W-3Jq-/view?usp=drive_link"
+          title: "Mist",
+          description: "Mist is a React-based project aimed at recreating the home page of Steam, the popular gaming platform. This project is designed to provide users with a familiar interface for browsing games, deals, and news, similar to the Steam home page experience.",
+          link: "https://github.com/WorldAdrastea/Mist",
+          image: "",
+          demo: "https://mistgaming.netlify.app/"
         },
         Project2: {
           title: "YTT API",
@@ -187,9 +186,9 @@ export const Projects = () => {
                 Select a project:
             </Typography>
             <div className="cards">
-                <Card onClick={() => handleNavItemClick("Project1")} data-app-name="Chat App" >
+                <Card onClick={() => handleNavItemClick("Project1")} data-app-name="Mist App" >
                     <div>
-                        <Typography variant="h1" id="ChatCard">Chat</Typography>
+                        <Typography variant="h1" id="MistCard">Mist</Typography>
                     </div>
                 </Card>
                 <Card onClick={() => handleNavItemClick("Project2")} data-app-name="YTT_API" >
